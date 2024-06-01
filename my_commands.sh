@@ -15,10 +15,19 @@ mv i_am_learning_shell_script shell_scripting/
 echo "still on the move engineer ${my_name}"
 ls
 tree
-sudo yum install tree
-sudo yum install tree -y
-sudo yum install git
-sudo yum install git  -y
+if [[ $USER == "ec2-user" ]]; then
+	echo "user: ${USER} is installing packages on 'ubuntu server'"
+	sudo yum install tree -y
+	sudo yum install git  -y
+elif [[ $USER == "ubuntu"  ]]; then
+	echo "user: ${USER} is installing packages on 'ubuntu server'"
+	sudo snap install tree -y
+	sudo apt install git -y
+elif [[ $OS == "OS=Windows_NT" ]]; then
+	echo "we do not have any installer yet. we advise you toil on google by searching"
+else
+	echo "hey you, what system do you use?"
+fi
 history
 
 echo "this is yours truly Engineer ${my_name}"
