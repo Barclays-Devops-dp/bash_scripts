@@ -62,3 +62,77 @@ else
 fi
 
 
+
+# if [[ condition ]]; then 
+#    # write the code that you want  execute in here
+# fi
+#if 2 is greater than 4 then this should run
+if [[ 2 -gt 4 ]]; then
+   echo "Yes this is true"
+fi
+
+
+#if 4 is greater than 2 then this should run
+if [[ 4 -gt 2 ]]; then
+   echo "Yes 4 is greater than 2"
+fi
+
+echo "this is the last line of the script"
+
+
+#-z checks if the lenght of the string is zero ( which simply means it checks if the 
+#string is empty). 
+course="DevOps"
+if [[ -z "$course" ]]; then
+    echo "string is empty"
+fi
+
+city=""
+if [[ -z "$city" ]]; then
+    echo "string is empty"
+fi
+
+##if else
+#-n checks for non-empty strings. if string is not empty it will result in true, and 
+#and vice-versa
+module=""
+if [[ -n "$module" ]]; then
+    echo "Module is ${module} and it is NOT empty"
+else
+    echo "You didn't provide module name, please run script again and provide module name"
+fi
+
+##elif : it is used to check multiple conditions in a sequence
+echo ""
+echo ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+lesson="github actions"
+if [[ $lesson == "linux" ]]; then
+    echo "we love linux so we are running ${lesson}"
+elif [[ $lesson == "git" ]]; then 
+    echo "lession is git and we love ${lesson}"
+elif [[ $lesson == "github actions" ]]; then 
+    echo "lesson is ${lesson} and we love ${lesson}" 
+else
+    echo "You didn't provide module name, please run script again and provide module name"
+fi
+
+
+#operating with and (&&) and logical (||) or
+#&& is used to check whether both conidtion are true
+# runner=Peter
+# if [[ -n $runner ]] && [[  $runner == "Peter" ]]; then
+#    echo "Runner variable is NOT empty and the runner is ${runner}"
+# else
+#    echo "Either runner is empty or runner is not equal to Peter"
+# fi 
+
+echo ""
+echo "--------------------------------------------------"
+runner=""
+if [[ -n $runner ]] || [[  $runner == "Peter" ]]; then
+   echo "We are happy to run because eiher runner is not empty or runner is ${runner}"
+else
+   echo "Either runner is empty or runner is not equal to Peter"
+fi 
+
+
