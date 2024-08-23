@@ -97,3 +97,46 @@ do
     done
 
 done
+
+
+
+
+#==================================================================================================================================
+array_of_regions=("us-east-1"  "us-west-2"  "eu-east-2")
+
+for item in "${array_of_regions[@]}"; do
+   # code to execute for EACH ITEM in the list goes here.
+   echo "i am dealing with: ${item}" 
+   echo "I am done. I am moving on to the next item"
+done
+
+#generate numbers from 0 to 100 in steps of 5
+# echo {0..100..5}
+
+echo ""
+echo "============================"
+# loop through numbers from 0 to 100 in steps of 5
+for num in  {0..100..5}; do
+   echo "Number is $num"
+done
+
+#for loop and and if clause. 
+
+for num in {0..100..5}; do
+  if [[ $num -gt 50  ]]; then
+        echo "$num is greater than 50"
+  fi
+done 
+
+
+echo ""
+echo "============================"
+array_of_regions=("us-east-1"  "us-west-2"  "eu-east-2")
+for region in "${array_of_regions[@]}"; do
+   # code to execute for EACH ITEM in the list goes here.
+   if [[ $region == "us-west-2"  ]]; then
+    echo "i am dealing with: ${region}" 
+    echo "I am provisioning some servers into region ${region}"
+  fi
+done
+
