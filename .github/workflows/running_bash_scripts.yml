@@ -14,6 +14,9 @@ jobs:
     - name: list the content of the repo
       run: ls -lart
 
+    - name: set up permission for the file
+      run: chmod +x special_parameters_with_for_and_if_clauses.sh
+
     - name: run a bash script
       run: ./special_parameters_with_for_and_if_clauses.sh
 
