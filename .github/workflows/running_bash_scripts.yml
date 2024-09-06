@@ -1,0 +1,20 @@
+name: Running a bashscript Using Github Actions
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  run-bash-job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: list the content of the repo
+      run: ls -lart
+
+    - name: run a bash script
+      run: ./special_parameters_with_for_and_if_clauses.sh
+
+
