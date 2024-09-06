@@ -15,9 +15,13 @@ jobs:
       run: ls -lart
 
     - name: set up permission for the file
-      run: chmod +x run_bash_script_file.sh
+      run: |
+        chmod +x run_bash_script_file.sh
+        chmod +x while_loops.sh
 
-    - name: run a bash script
+
+    - name: run a bash script file
       run: ./run_bash_script_file.sh
 
-
+    - name: run while loop file
+      run: ./while_loops.sh
