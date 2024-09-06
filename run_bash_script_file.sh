@@ -1,0 +1,1 @@
+echo "This bash script is being run from Github Actions"

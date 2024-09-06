@@ -15,9 +15,9 @@ jobs:
       run: ls -lart
 
     - name: set up permission for the file
-      run: chmod +x special_parameters_with_for_and_if_clauses.sh
+      run: chmod +x run_bash_script_file.sh
 
     - name: run a bash script
-      run: ./special_parameters_with_for_and_if_clauses.sh
+      run: ./run_bash_script_file.sh
 
 
